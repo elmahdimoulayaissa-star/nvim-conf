@@ -49,9 +49,7 @@ vim.keymap.set("x","<leader>p","\"_dP")
 vim.keymap.set("n","<leader>f","<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>t", ":split | terminal<CR>i")
 
-vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
-vim.keymap.set("i", "<C-s>", "<cmd>w<CR>")
-vim.keymap.set("v", "<C-s>", "<cmd>w<CR>")
+vim.keymap.set({"n","i","v"}, "<C-s>", "<cmd>w<CR>")
 
 vim.keymap.set("n", "<leader>q", "<cmd>wqa<CR>")
 
@@ -68,9 +66,7 @@ vim.keymap.set('n', ')d', vim.diagnostic.goto_prev , { desc = 'Prev diagnostic' 
 vim.keymap.set('n', '(d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
 vim.keymap.set('n', '<leader>xd', vim.diagnostic.setloclist, { desc = 'Diagnostics to loclist' })
 
-vim.keymap.set('n', '<C-w>', "<cmd>bd<CR>", { nowait = true })
-vim.keymap.set('v', '<C-w>', "<cmd>bd<CR>", { nowait = true })
-vim.keymap.set('i', '<C-w>', "<cmd>bd<CR>", { nowait = true })
+vim.keymap.set({'n','v','i'}, '<C-w>', "<cmd>bd<CR>", { nowait = true })
 
 vim.keymap.set('n', '<F5>', function()
   local ft = vim.bo.filetype
@@ -83,3 +79,10 @@ end, { desc = 'Run/Debug current file' })
 
 vim.keymap.set('n','<leader>pt',"<cmd>Themery<CR>")
 
+
+vim.keymap.set({ "n", "v" }, "d", '""d')
+vim.keymap.set({ "n", "v" }, "D", '""D')
+vim.keymap.set({ "n", "v" }, "c", '""c')
+vim.keymap.set({ "n", "v" }, "C", '""C')
+vim.keymap.set({ "n", "v" }, "x", '""x')
+vim.keymap.set({ "n", "v" }, "X", '""X')
