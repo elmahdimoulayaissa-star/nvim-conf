@@ -17,6 +17,16 @@ return {
                 after = "vim.g.airline_theme = 'solarized'; vim.cmd('AirlineRefresh')",
             },
             {
+                name = "high contrast",
+                colorscheme = "github_dark_high_contrast",
+                after = "vim.g.airline_theme = 'solarized'; vim.cmd('AirlineRefresh')",
+            },
+            {
+                name = "github dark",
+                colorscheme = "github_dark",
+                after = "vim.g.airline_theme = 'solarized'; vim.cmd('AirlineRefresh')",
+            },
+            {
                 name = "gruvbox-solid",
                 colorscheme = "gruvbox",
                 before = "require('gruvbox').setup({transparent_mode = false,})",

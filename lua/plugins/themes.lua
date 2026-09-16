@@ -6,5 +6,7 @@ return{
     { "ellisonleao/gruvbox.nvim",
     config = true,
     },
-
+    { 'projekt0n/github-nvim-theme',
+    name = 'github-theme'
+    },
 }
