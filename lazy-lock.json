@@ -30,5 +30,7 @@
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "b25b749b9db64d375d782094e2b9dce53ad53a40" },
   "telescope.nvim": { "branch": "master", "commit": "5255aa27c422de944791318024167ad5d40aad20" },
   "themery.nvim": { "branch": "main", "commit": "bfa58f4b279d21cb515b28023e1b68ec908584b2" },
-  "undotree": { "branch": "main", "commit": "02b69aed427b848c4dca483fc5e9524b6019c296" }
+  "undotree": { "branch": "main", "commit": "02b69aed427b848c4dca483fc5e9524b6019c296" },
+  "vim-airline": { "branch": "master", "commit": "ae24f4aca06731d5d7224df1fc5415975331b214" },
+  "vim-airline-themes": { "branch": "master", "commit": "77aab8c6cf7179ddb8a05741da7e358a86b2c3ab" }
 }
