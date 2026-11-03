@@ -2,6 +2,7 @@
 return {
   {
     "CRAG666/code_runner.nvim",
+    ft = PROGRAMMING_FT,
 --    keys = {
 --      { "<F5>", "<cmd>RunCode<cr>", desc = "Run Code" },
 --    },
