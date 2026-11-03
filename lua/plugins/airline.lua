@@ -1,6 +1,8 @@
 return {
   "vim-airline/vim-airline",
   dependencies = { "vim-airline/vim-airline-themes" },
+  lazy = false,
+  priority = 1000,
   init = function()
     vim.g.airline_powerline_fonts = 1
     vim.api.nvim_create_autocmd("ColorScheme", {

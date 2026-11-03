@@ -2,7 +2,7 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 vim.opt.expandtab = true
 
 
@@ -17,7 +17,7 @@ vim.opt.expandtab = true
 
 
 vim.opt.undofile = true
-vim.opt.undodir = "~/.local/state/nvim/undodir"
+vim.opt.undodir = "/home/elmahdi/.local/state/nvim/undodir"
 
 vim.o.clipboard = "unnamedplus"
 

@@ -38,7 +38,7 @@ end)
 
 --Quality-of-life
     --to-move-selected-text
-    vim.keymap.set("v","<C-Down>",":m '>+1<CR>gv=gv") 
+    vim.keymap.set("v","<C-Down>",":m '>+1<CR>gv=gv")
     vim.keymap.set("v","<C-Up>",":m '<-2<CR>gv=gv")
     --to-keep-seach-in-the-middle-of-the-screen
 vim.keymap.set("n","n","nzzzv")
@@ -60,11 +60,12 @@ vim.keymap.set("t", "<C-q>", [[<C-\><C-n>:q<CR>]])
 vim.keymap.set("v","#" , ":s/^/#/<CR>:noh<CR>" )
 vim.keymap.set("v","<leader>/" , ":s|^|/|<CR>:noh<CR>" )
 vim.keymap.set("n","<Esc>","<cmd>nohlsearch<CR>")
-
+--lsp
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
 vim.keymap.set('n', ')d', vim.diagnostic.goto_prev , { desc = 'Prev diagnostic' })
 vim.keymap.set('n', '(d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
 vim.keymap.set('n', '<leader>xd', vim.diagnostic.setloclist, { desc = 'Diagnostics to loclist' })
+vim.keymap.set({'n', 'v'}, 'rn', vim.lsp.buf.rename, { desc = 'rename' })
 
 vim.keymap.set({'n','v','i'}, '<C-w>', "<cmd>bd<CR>", { nowait = true })
 
@@ -73,16 +74,33 @@ vim.keymap.set('n', '<F5>', function()
   if  ft == 'cpp' then
     require('dap').continue()
   else
-    vim.cmd('RunCode')
+      vim.cmd('RunCode')
   end
 end, { desc = 'Run/Debug current file' })
 
+--Compiler 
+vim.keymap.set('n',"<F6>","<cmd>CompilerOpen<cr>",{noremap = true, silent = true })
+vim.keymap.set('n', '<S-F6>', "<cmd>CompilerStop<cr>" .. "<cmd>CompilerRedo<cr>", { noremap = true, silent = true })
+vim.keymap.set('n',"<S-F7>","<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+
 vim.keymap.set('n','<leader>pt',"<cmd>Themery<CR>")
 
-
+--deleat doesn't interfer with clipboard 
 vim.keymap.set({ "n", "v" }, "d", '""d')
 vim.keymap.set({ "n", "v" }, "D", '""D')
 vim.keymap.set({ "n", "v" }, "c", '""c')
 vim.keymap.set({ "n", "v" }, "C", '""C')
 vim.keymap.set({ "n", "v" }, "x", '""x')
 vim.keymap.set({ "n", "v" }, "X", '""X')
+--vim.keymap.set({ "n", "v" }, "p", '""p')
+--vim.keymap.set({ "n", "v" }, "P", '""P')
+
+--toggle codeium
+vim.keymap.set({"n","v"}, "<leader>ci",function ()
+    vim.cmd("NeoCodeium toggle")
+    vim.notify("NeoCodeium toggled!")
+end,{desc = "Toggle NeoCodeium"} )
+
+vim.keymap.set("n","<leader>si","<cmd>SpringInitializr<cr>")
+vim.keymap.set("n", "<leader>sg", "<CMD>SpringGenerateProject<CR>")
+
